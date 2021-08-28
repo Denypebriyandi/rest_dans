@@ -1,0 +1,145 @@
+{
+	"info": {
+		"_postman_id": "190c0078-62ae-4c73-9392-828d1d043f35",
+		"name": "DANS MULTIPRO",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "LOGIN",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "test12345678",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "rest_dansMultiPro",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "1q2w3e4r5t6y0123456789",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"administrator\",\n    \"password\": \"password123456\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:9000/rest_dans/v1/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"rest_dans",
+						"v1",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET LIST",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWRfdXNlciI6MTAwMDEsInVzZXJuYW1lIjoiYWRtaW5pc3RyYXRvciIsIm5hbWUiOiJBZG1pbiIsImlhdCI6MTYzMDEyNjY0NCwiZXhwIjoxNjMwMTU1NDQ0fQ.me8QC5uuO84iizHLufPzE5-k1c0KRryl6qa3875CV-o",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "1q2w3e4r5t6y0123456789",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:9000/rest_dans/v1/listData?description=Ruby&location=Remote",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"rest_dans",
+						"v1",
+						"listData"
+					],
+					"query": [
+						{
+							"key": "description",
+							"value": "Ruby"
+						},
+						{
+							"key": "location",
+							"value": "Remote"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET DETAIL",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWRfdXNlciI6MTAwMDEsInVzZXJuYW1lIjoiYWRtaW5pc3RyYXRvciIsIm5hbWUiOiJBZG1pbiIsImlhdCI6MTYzMDEyNjY0NCwiZXhwIjoxNjMwMTU1NDQ0fQ.me8QC5uuO84iizHLufPzE5-k1c0KRryl6qa3875CV-o",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "1q2w3e4r5t6y0123456789",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:9000/rest_dans/v1/detailData/7638eee4-4e75-4c06-a920-ea7619a311b5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"rest_dans",
+						"v1",
+						"detailData",
+						"7638eee4-4e75-4c06-a920-ea7619a311b5"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
